@@ -1,0 +1,103 @@
+About irMusic
+=============
+
+  irMusic works in conjunction with a smart remote such as the logitech harmony
+  one that can emulate several Apple IR remotes. The basic play/pause/skip/stop
+  functionality will control iTunes as normal, however, additional buttons such
+  as 1..5 will rate the currently playing track and the "info" button will speak the
+  current track rating.
+
+
+Remote Setup
+============
+
+  Add a new device using "media center PC", plex, plex player with a suitable
+  name e.g "Plex Mac Mini"
+
+  The default bindings are suitable for controlling plex, but will need remapping
+  for iTunes control. 
+
+  Create a new activity (note some steps may differ depending on whether you
+  use an AV Receiver or not):
+     No - manually add an activity to my setup
+     Listen to music
+     Listen to Digital Music
+     Leave Listen to digital music checked.
+     I use my Plex Mac Mini to play digital music
+     I use my AV Receiver to control the volume
+       VCR/DVR (or whatever input source mac is plugged into)
+     Yes these settings are correct.
+     Done
+
+  Note, when using iTunes without this app running, you'll either need an activity
+  setup to use the default apple IR settings (see logitech DB for mac mini) or
+  use the dir right/left to skip and ok to play/pause.
+
+  Running iTunes then this app should now allow both control of iTunes in a normal
+  way as well as rating songs by pressing the buttons 1..5 on the remote.
+ 
+  You may need to unpair any existing remote to allow multiple remote IDs to be
+  used. However as of 10.8, even when a single remote is paired, any remote is able
+  to control iTunes (bug?)
+
+  You may also need to hit the OK button the first time the app runs before events
+  will be recognised.
+
+  This app is designed to work with the Harmoney One remote by Logitech using the
+  Plex/Plex Player device and default mappings. Although other configurations may 
+  work, they're unsupported. Feel free to experiment, but please don't complain if
+  anything breaks.
+
+  Please report any bugs or feature suggestions to gary@mups.co.uk
+
+Third Party Code
+================
+  
+  This app uses the HIDRemote class by IOSpirit (www.iospirit.com/developers/) under the
+  following license. The latest code for this class is available via the IOSpirit website.
+
+  //
+  //  Copyright (c) 2007-2011 IOSPIRIT GmbH (http://www.iospirit.com/)
+  //  All rights reserved.
+  //  
+  //  Redistribution and use in source and binary forms, with or without modification,
+  //  are permitted provided that the following conditions are met:
+  //  
+  //  * Redistributions of source code must retain the above copyright notice, this list
+  //    of conditions and the following disclaimer.
+  //  
+  //  * Redistributions in binary form must reproduce the above copyright notice, this
+  //    list of conditions and the following disclaimer in the documentation and/or other
+  //    materials provided with the distribution.
+  //  
+  //  * Neither the name of IOSPIRIT GmbH nor the names of its contributors may be used to
+  //    endorse or promote products derived from this software without specific prior
+  //    written permission.
+  //  
+  //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+  //  EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+  //  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+  //  SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  //  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+  //  TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+  //  BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  //  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+  //  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+  //  DAMAGE.
+  
+LICENSE
+=======
+  
+  This app is Copyright 2013 by Gary Preston. All Rights Reserved.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+  EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+  SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+  TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+  BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+  DAMAGE.
+
