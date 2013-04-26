@@ -55,7 +55,7 @@
 		4E1857391729D18100B666D5 = {
 			isa = PBXGroup;
 			children = (
-				4E18574B1729D18100B666D5 /* irmapping */,
+				4E18574B1729D18100B666D5 /* irMusic */,
 				4E1857441729D18100B666D5 /* Frameworks */,
 				4E1857431729D18100B666D5 /* Products */,
 			);
@@ -81,7 +81,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4E18574B1729D18100B666D5 /* irmapping */ = {
+		4E18574B1729D18100B666D5 /* irMusic */ = {
 			isa = PBXGroup;
 			children = (
 				4E1857791729D1B600B666D5 /* HIDRemote */,
@@ -91,6 +91,7 @@
 				4E18575A1729D18200B666D5 /* MainMenu.xib */,
 				4E18574C1729D18100B666D5 /* Supporting Files */,
 			);
+			name = irMusic;
 			path = irmapping;
 			sourceTree = "<group>";
 		};

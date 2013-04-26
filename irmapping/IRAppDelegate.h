@@ -13,5 +13,12 @@
 @interface IRAppDelegate : NSObject <NSApplicationDelegate, HIDRemoteDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSMenu *statusMenu;
+@property (weak) IBOutlet NSMenuItem *enableRemoteItem;
+@property (weak) IBOutlet NSMenuItem *disableRemoteItem;
+
+- (IBAction)quitApp:(id)sender;
+- (IBAction)enableIR:(id)sender;
+- (IBAction)disableIR:(id)sender;
 
 @end

@@ -11,11 +11,37 @@
 #import "iTunes.h"
 
 @interface IRAppDelegate()
+
 @property (nonatomic, strong) iTunesApplication *iTunes;
 @property (nonatomic, strong) NSSpeechSynthesizer *speechSynth;
+@property (nonatomic, strong) NSStatusItem *statusItem;
+
+- (void)enableRemote;
+- (void)disableRemote;
+- (void)terminateApp:(id)sender;
 @end
 
 @implementation IRAppDelegate
+
+//////////////////////////////////////////////////////////////////////////////
+// Actions
+//////////////////////////////////////////////////////////////////////////////
+#pragma mark - Actions
+
+- (IBAction)quitApp:(id)sender
+{
+   [self terminateApp:sender];
+}
+
+- (IBAction)enableIR:(id)sender
+{
+   [self enableRemote];
+}
+
+- (IBAction)disableIR:(id)sender
+{
+   [self disableRemote];
+}
 
 //////////////////////////////////////////////////////////////////////////////
 // Remote Delegate
@@ -26,7 +52,7 @@
 {
 	// NSLog(@"Button with code %d/%d %@", (int)hidRemote.lastSeenRemoteControlID, buttonCode, (isPressed ? @"pressed" : @"released"));
    
-   if (!self.iTunes.isRunning || !isPressed)
+   if (! self.iTunes.isRunning || !isPressed)
       return;
    
    SInt32 remoteID = hidRemote.lastSeenRemoteControlID;
@@ -73,61 +99,80 @@
 }
 
 //////////////////////////////////////////////////////////////////////////////
-// Application
+// Application Delegate
 //////////////////////////////////////////////////////////////////////////////
-#pragma mark - Application
+#pragma mark - Application Delegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
    _speechSynth = [[NSSpeechSynthesizer alloc] initWithVoice:nil];
    self.iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
    
-   if (! [self.iTunes isRunning])
-   {
-      NSAlert *alert = [NSAlert alertWithMessageText:@"iTunes not available."
-                                       defaultButton:@"OK" alternateButton:nil otherButton:nil
-                           informativeTextWithFormat:@"iTunes is not running"];
-      [alert runModal];
-      
-      return;
-   }
-   
-   // proof of concept test code.
+   // TODO: Change this to a nice icon with greyed out version for disabled state
+   self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+   [self.statusItem setMenu:self.statusMenu];
+   [self.statusItem setTitle:@"irMusic"];
+   [self.statusItem setHighlightMode:YES];
+
    if ([HIDRemote isCandelairInstallationRequiredForRemoteMode:kHIDRemoteModeExclusive])
    {
       // Candelair needs to be installed. Inform the user about it.
       NSAlert *alert = [NSAlert alertWithMessageText:@"IR Communication failed."
                                        defaultButton:@"OK" alternateButton:nil otherButton:nil
-                           informativeTextWithFormat:@"Unable to communicate with IR hardware, your OS version may require Candelair installing."];
+                           informativeTextWithFormat:@"Unable to communicate with IR hardware. You may need to install Candelair."];
       [alert runModal];
       
+      [self disableRemote];
+   }
+   else
+      [self enableRemote];
+}
+
+- (void)applicationWillTerminate:(NSNotification *)notification
+{
+   [self disableRemote];
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// Private
+//////////////////////////////////////////////////////////////////////////////
+#pragma mark - Private
+
+- (void)enableRemote
+{
+   if (! [[HIDRemote sharedHIDRemote] startRemoteControl:kHIDRemoteModeExclusive])
+   {
+      // Start failed
+      NSAlert *alert = [NSAlert alertWithMessageText:@"IR Remote"
+                                       defaultButton:@"OK" alternateButton:nil otherButton:nil
+                           informativeTextWithFormat:@"Unable to start IR Remote in exclusive mode. Close all other IR apps then try again."];
+      [alert runModal];
+      
+      [self.enableRemoteItem setEnabled:TRUE];
+      [self.disableRemoteItem setEnabled:FALSE];
    }
    else
    {
       // Start using HIDRemote ..
       [[HIDRemote sharedHIDRemote] setDelegate:self];
-
-      if (! [[HIDRemote sharedHIDRemote] startRemoteControl:kHIDRemoteModeExclusive])
-      {
-         // Start failed
-         NSAlert *alert = [NSAlert alertWithMessageText:@"IR Remote"
-                                          defaultButton:@"OK" alternateButton:nil otherButton:nil
-                              informativeTextWithFormat:@"Unable to start IR Remote in exclusive mode. Close all other IR apps?"];
-         [alert runModal];
-      }
+      
+      [self.enableRemoteItem setEnabled:FALSE];
+      [self.disableRemoteItem setEnabled:TRUE];
    }
 }
 
-- (void)applicationWillTerminate:(NSNotification *)notification
+- (void)disableRemote
 {
    [[HIDRemote sharedHIDRemote] stopRemoteControl];
+   [[HIDRemote sharedHIDRemote] setDelegate:nil];
+   
+   [self.enableRemoteItem setEnabled:TRUE];
+   [self.disableRemoteItem setEnabled:FALSE];
 }
 
-//////////////////////////////////////////////////////////////////////////////
-
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
+- (void)terminateApp:(id)sender
 {
-   return YES;
+   [[NSApplication sharedApplication] terminate:sender];
 }
 
 //////////////////////////////////////////////////////////////////////////////
