@@ -139,7 +139,7 @@
    // TODO: Change this to a nice icon with greyed out version for disabled state
    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
    [self.statusItem setMenu:self.statusMenu];
-   [self.statusItem setTitle:@"irMusic"];
+   [self.statusItem setTitle:@"Iris"];
    [self.statusItem setHighlightMode:YES];
 
    if ([HIDRemote isCandelairInstallationRequiredForRemoteMode:kHIDRemoteModeExclusive])

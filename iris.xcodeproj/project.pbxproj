@@ -16,6 +16,7 @@
 		4E9CD2C4172C3D3500E608AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9CD2C2172C3D3500E608AC /* main.m */; };
 		4E9CD2C9172C3D4100E608AC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2C5172C3D4100E608AC /* Credits.rtf */; };
 		4E9CD2CA172C3D4100E608AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2C7172C3D4100E608AC /* InfoPlist.strings */; };
+		4E9CD2DC172C4F9300E608AC /* iris.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2DB172C4F9300E608AC /* iris.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +24,6 @@
 		4E1857451729D18100B666D5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4E18577D1729D24700B666D5 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		4E1857811729E87B00B666D5 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
-		4E9CD2B2172C173700E608AC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		4E9CD2B4172C1A7700E608AC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4E9CD2B6172C3CE600E608AC /* HIDRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIDRemote.h; path = iris/HIDRemote/HIDRemote.h; sourceTree = SOURCE_ROOT; };
 		4E9CD2B7172C3CE600E608AC /* HIDRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIDRemote.m; path = iris/HIDRemote/HIDRemote.m; sourceTree = SOURCE_ROOT; };
 		4E9CD2B9172C3D0200E608AC /* IRAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IRAppDelegate.h; path = iris/IRAppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -36,6 +35,7 @@
 		4E9CD2C2172C3D3500E608AC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = iris/main.m; sourceTree = SOURCE_ROOT; };
 		4E9CD2C6172C3D4100E608AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = iris/en.lproj/Credits.rtf; sourceTree = SOURCE_ROOT; };
 		4E9CD2C8172C3D4100E608AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = iris/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		4E9CD2DB172C4F9300E608AC /* iris.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = iris.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +55,7 @@
 		4E1857391729D18100B666D5 = {
 			isa = PBXGroup;
 			children = (
-				4E9CD2B4172C1A7700E608AC /* AppKit.framework */,
-				4E9CD2B2172C173700E608AC /* AVFoundation.framework */,
+				4E9CD2DB172C4F9300E608AC /* iris.icns */,
 				4E18574B1729D18100B666D5 /* iris */,
 				4E1857441729D18100B666D5 /* Frameworks */,
 				4E1857431729D18100B666D5 /* Products */,
@@ -171,6 +170,7 @@
 				4E9CD2BF172C3D1500E608AC /* MainMenu.xib in Resources */,
 				4E9CD2C9172C3D4100E608AC /* Credits.rtf in Resources */,
 				4E9CD2CA172C3D4100E608AC /* InfoPlist.strings in Resources */,
+				4E9CD2DC172C4F9300E608AC /* iris.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
