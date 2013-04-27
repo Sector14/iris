@@ -38,17 +38,93 @@ How It Works
 Default Plex Mappings
 =====================
   
-  By default the plex player device in the logitech DB is configured to use the following
-  remote ID and button code pairs.
-  
-  Menu      150   6
-  Exit      155   1
-  Info      153   1
-  Giude     157   5
-  Up Arrow  158   1
-  Dn Arrow  158   2
+  If you're configuring a different smart remote that can send Apple IR
+  remoteID/button codes combinations, use the following codes:
 
-  more to follow.
+  Button    Remote ID   Code
+  Info      153         1
+  1         151         1
+  2         151         2
+  3         151         3
+  4         151         4
+  5         152         3
+  Ok        150         5 
+
+
+  Although not used currently by this app, the following is a complete list of the plex
+  remote/code mappings in the Harmony One DB.
+
+  Menu      150         6
+  Exit      155         1
+  Info      153         1
+  Guide     157         5
+  Up Arrow  ??
+  Dn Arrow  ??
+
+  Vol Up    152         1
+  Vol Dn    152         2
+  Chan Up   158         1
+  Chan Dn   158         2
+  
+  Dir Up    150         1
+  Dir Dn    150         2
+  Dir Left  150         3
+  Dir Right 150         4
+  Ok        150         5
+
+  Mute      152         5
+
+  Rewind    154         1
+  Fast Fwd  154         2
+  Skip Back 160         1
+  Skip Fwd  160         2
+  Record    155         2
+  Stop      151         5
+  Play      151         6
+  Pause     151         6
+
+  1         151         1
+  2         151         2
+  3         151         3
+  4         151         4
+  5         152         3
+  6         152         4
+  7         153         3
+  8         153         4
+  9         154         3
+  0         154         4
+  +         154         5
+  E         153         6
+  
+Additional Buttons:
+
+  Back      153         2
+  Aspect    157         1
+  Blue      159         6
+  Yellow    159         5
+  Green     159         4
+  Red       159         3
+  Lrg Down  159         2
+  Lrg Up    159         1
+
+  Power     157         6
+  Queue     157         5
+  Sleep     157         4
+  
+  F1        155         3
+  F2        155         4
+  F3        155         5
+  F4        155         6
+  F5        160         3
+  F6        160         4
+  F7        160         5
+  F8        160         6
+  F9        158         3
+  F10       158         4
+  F11       158         5
+  F12       158         6
+  F13       157         3
+  F14       157         4
   
 
 Default Apple Mappings
@@ -66,5 +142,5 @@ Default Apple Mappings
   
   For the hold code, add 65536 to the above codes. i.e Up becomes 65537
   
-  
+  Only Menu is currently unused by iTunes  
 
