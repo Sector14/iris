@@ -21,8 +21,6 @@
 /* Begin PBXFileReference section */
 		4E1857421729D18100B666D5 /* irMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = irMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E1857451729D18100B666D5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		4E1857481729D18100B666D5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		4E18574A1729D18100B666D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4E18574D1729D18100B666D5 /* irMusic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "irMusic-Info.plist"; sourceTree = "<group>"; };
 		4E18574F1729D18100B666D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E1857511729D18100B666D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -36,6 +34,8 @@
 		4E18577D1729D24700B666D5 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		4E18577F1729E6F400B666D5 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
 		4E1857811729E87B00B666D5 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		4E9CD2B2172C173700E608AC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4E9CD2B4172C1A7700E608AC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +55,8 @@
 		4E1857391729D18100B666D5 = {
 			isa = PBXGroup;
 			children = (
+				4E9CD2B4172C1A7700E608AC /* AppKit.framework */,
+				4E9CD2B2172C173700E608AC /* AVFoundation.framework */,
 				4E18574B1729D18100B666D5 /* irMusic */,
 				4E1857441729D18100B666D5 /* Frameworks */,
 				4E1857431729D18100B666D5 /* Products */,
@@ -72,8 +74,6 @@
 		4E1857441729D18100B666D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4E18574A1729D18100B666D5 /* Foundation.framework */,
-				4E1857481729D18100B666D5 /* AppKit.framework */,
 				4E1857451729D18100B666D5 /* Cocoa.framework */,
 				4E18577D1729D24700B666D5 /* IOKit.framework */,
 				4E1857811729E87B00B666D5 /* ScriptingBridge.framework */,

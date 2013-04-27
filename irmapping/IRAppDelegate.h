@@ -14,8 +14,12 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSMenu *statusMenu;
-@property (weak) IBOutlet NSMenuItem *enableRemoteItem;
-@property (weak) IBOutlet NSMenuItem *disableRemoteItem;
+@property (weak) IBOutlet NSMenuItem *enableRemoteMenuItem;
+@property (weak) IBOutlet NSMenuItem *disableRemoteMenuItem;
+
+@property (weak) IBOutlet NSMenuItem *announceNewRatingMenuItem;
+@property (weak) IBOutlet NSMenuItem *announceUnratedMenuItem;
+@property (weak) IBOutlet NSMenuItem *delayedRatingMenuItem;
 
 - (IBAction)quitApp:(id)sender;
 - (IBAction)enableIR:(id)sender;

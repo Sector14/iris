@@ -8,6 +8,47 @@ About irMusic
   current track rating.
 
 
+Usage
+=====
+
+  Once your remote has been correctly configured, simply start iTunes and the irMusic app.
+  Anytime you want to rate a song, press 1 to 5 on your remote.
+
+  To hear the rating for the currently playing song, press "info"
+
+  If you do not wish the hear a confirmation of each newly set rating spoken back to you,
+  uncheck the "Announce ratings" option in the status menu.
+
+
+Experimental Features
+=====================
+
+  Unrated Announcement
+  --------------------
+
+  Announcement that an unrated track has just started playing can be enabled in the 
+  status bar. The words "No rating" will be spoken any time a track that has either a 
+  track rating of 0 or a computed track rating based on the album rating plays.
+  
+  This feature relies on an undocumented iTunes notification. Any future iTunes update
+  may break this functionality.
+  
+
+  Delayed Ratings
+  ---------------
+
+  If you play tracks from a smart playlst that uses live updating, it's possible that
+  changing the rating of a track could cause its immediate removal from the playlist even
+  though the track still meets the playlists criteria.
+
+  By enabling the "delay rating" option, the app will remember the rating you've assigned
+  to the currently playing track and will apply it once a different track starts playing.
+
+  This feature relies on an undocumented iTunes notification. Any future iTunes update
+  may break this functionality.
+
+
+
 Remote Setup
 ============
 

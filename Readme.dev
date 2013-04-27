@@ -1,31 +1,11 @@
 
-If a playlist uses live updating, ratings changes are not applied until the track has finished
-playing. Speech will say "x star delayed". This will allow a rating that will cause the song
-to be removed out of the playlist to finish playing first. Eventually add a config option to apply
-ratings immediatley or delayed.
-
-I have a smart playlist that selects a % of 3,4 and 5 star songs along with other criteria. Once a
-rating changes, even if it's within the 3..5 allowed range, it will still be dropped from the playlist.
-Delayed updates will allow the rating to be applied when the track finishes and would normally drop
-out of the playlist anyway.
-
-http://stackoverflow.com/questions/4888816/objective-c-mac-os-x-distributed-notifications-itunes?rq=1
-
 Future Improvements
 ===================
 
   The following lists possible improvements/new features. These may or may not ever happen.
 
-  - Run the app minimused to the menu tray
   - Allow app to run in exclusive or exclusive auto modes
-  - Option to speak newly set rating
-  - Option to speak current rating
-  - Option to speak if unrated
-  - Allow custom buttons to start a specified playlist
-    e.g renamed F1..F14
-  - Allow rating of previously played track
-    Useful if a smart playlist will remove a track if the rating changes before it finishes playing
-  - Toggle to stop listening for remote signals.
+  - Allow custom buttons to start a specified playlist e.g renamed F1..F14
   - Make fast fwd/rewind stop occuring when the release event occurs (assuming this is
     sufficiently exposed by HID remote)
 

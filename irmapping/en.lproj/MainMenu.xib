@@ -79,7 +79,6 @@
 						<reference key="NSMenu" ref="54199416"/>
 						<bool key="NSIsDisabled">YES</bool>
 						<bool key="NSIsSeparator">YES</bool>
-						<bool key="NSIsHidden">YES</bool>
 						<string key="NSTitle"/>
 						<string key="NSKeyEquiv"/>
 						<int key="NSKeyEquivModMask">1048576</int>
@@ -89,8 +88,7 @@
 					</object>
 					<object class="NSMenuItem" id="703133947">
 						<reference key="NSMenu" ref="54199416"/>
-						<bool key="NSIsHidden">YES</bool>
-						<string key="NSTitle">Say Rating</string>
+						<string key="NSTitle">Announce New Rating</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<int key="NSState">1</int>
@@ -99,8 +97,16 @@
 					</object>
 					<object class="NSMenuItem" id="805682527">
 						<reference key="NSMenu" ref="54199416"/>
-						<bool key="NSIsHidden">YES</bool>
-						<string key="NSTitle">Say Unrated</string>
+						<string key="NSTitle">Announce Unrated</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<int key="NSState">1</int>
+						<reference key="NSOnImage" ref="476583685"/>
+						<reference key="NSMixedImage" ref="983081737"/>
+					</object>
+					<object class="NSMenuItem" id="381422837">
+						<reference key="NSMenu" ref="54199416"/>
+						<string key="NSTitle">Delayed Rating</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<int key="NSState">1</int>
@@ -190,19 +196,43 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">enableRemoteItem</string>
+						<string key="label">delayedRatingMenuItem</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="135486085"/>
+						<reference key="destination" ref="381422837"/>
 					</object>
-					<int key="connectionID">590</int>
+					<int key="connectionID">600</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">disableRemoteItem</string>
+						<string key="label">announceUnratedMenuItem</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="805682527"/>
+					</object>
+					<int key="connectionID">601</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">announceNewRatingMenuItem</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="703133947"/>
+					</object>
+					<int key="connectionID">602</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">enableRemoteMenuItem</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="135486085"/>
+					</object>
+					<int key="connectionID">603</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">disableRemoteMenuItem</string>
 						<reference key="source" ref="976324537"/>
 						<reference key="destination" ref="638260419"/>
 					</object>
-					<int key="connectionID">591</int>
+					<int key="connectionID">604</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -254,6 +284,7 @@
 							<reference ref="859544897"/>
 							<reference ref="703133947"/>
 							<reference ref="805682527"/>
+							<reference ref="381422837"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -302,6 +333,11 @@
 						<reference key="object" ref="805682527"/>
 						<reference key="parent" ref="54199416"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">599</int>
+						<reference key="object" ref="381422837"/>
+						<reference key="parent" ref="54199416"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -320,12 +356,13 @@
 				<string key="592.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="593.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="594.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="599.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">594</int>
+			<int key="maxID">604</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -352,12 +389,27 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="announceNewRating">NSMenuItem</string>
+						<string key="announceUnrated">NSMenuItem</string>
+						<string key="delayedRatingMenuItem">NSMenuItem</string>
 						<string key="disableRemoteItem">NSMenuItem</string>
 						<string key="enableRemoteItem">NSMenuItem</string>
 						<string key="statusMenu">NSMenu</string>
 						<string key="window">NSWindow</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="announceNewRating">
+							<string key="name">announceNewRating</string>
+							<string key="candidateClassName">NSMenuItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="announceUnrated">
+							<string key="name">announceUnrated</string>
+							<string key="candidateClassName">NSMenuItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="delayedRatingMenuItem">
+							<string key="name">delayedRatingMenuItem</string>
+							<string key="candidateClassName">NSMenuItem</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="disableRemoteItem">
 							<string key="name">disableRemoteItem</string>
 							<string key="candidateClassName">NSMenuItem</string>

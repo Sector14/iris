@@ -10,15 +10,22 @@
 
 #import "iTunes.h"
 
+#define IRiTunesNotificationStateChange @"com.apple.iTunes.playerInfo"
+
 @interface IRAppDelegate()
 
 @property (nonatomic, strong) iTunesApplication *iTunes;
 @property (nonatomic, strong) NSSpeechSynthesizer *speechSynth;
 @property (nonatomic, strong) NSStatusItem *statusItem;
 
+@property (nonatomic, strong) iTunesTrack *trackToBeRated;
+@property (nonatomic, assign) NSUInteger ratingToApply;
+
 - (void)enableRemote;
 - (void)disableRemote;
 - (void)terminateApp:(id)sender;
+
+- (void)iTunesTrackChange:(NSNotification *)notification;
 @end
 
 @implementation IRAppDelegate
@@ -50,9 +57,7 @@
 
 - (void)hidRemote:(HIDRemote *)hidRemote eventWithButton:(HIDRemoteButtonCode)buttonCode isPressed:(BOOL)isPressed fromHardwareWithAttributes:(NSMutableDictionary *)attributes
 {
-	// NSLog(@"Button with code %d/%d %@", (int)hidRemote.lastSeenRemoteControlID, buttonCode, (isPressed ? @"pressed" : @"released"));
-   
-   if (! self.iTunes.isRunning || !isPressed)
+   if (! self.iTunes.isRunning || ! isPressed)
       return;
    
    SInt32 remoteID = hidRemote.lastSeenRemoteControlID;
@@ -81,21 +86,44 @@
       rating = 100;
    else if (remoteID == 154 && buttonCode == 4)
       rating = 0;
-   
-   if (rating != -1 && self.iTunes.currentTrack.rating != rating)
-   {
-      // NSLog(@"Changing rating of %@ from %ld to %ld", self.iTunes.currentTrack.name, (long)self.iTunes.currentTrack.rating, (unsigned long)rating);
-      
-      // TODO: As some smart playlists with live updating can cause a currently playing song to be skipped/removed
-      // from the list when the rating changes, rating changes will be cached until the track has finished playing.      
-      self.iTunes.currentTrack.rating = rating;
 
-      [self.speechSynth startSpeakingString:[NSString stringWithFormat:@"%ld star", (long)self.iTunes.currentTrack.rating/20]];
+   if (rating != -1)
+   {
+      iTunesSource *lib = [self.iTunes.sources objectWithName:@"Library"];
+      
+      iTunesUserPlaylist *pl = [lib.userPlaylists objectWithName:self.iTunes.currentPlaylist.name];
+
+      // Delay application of rating until track changes but only for smart playlists which could be live updating
+      if (pl.exists && pl.smart && self.delayedRatingMenuItem.state == NSOnState)
+      {
+         self.trackToBeRated = [self.iTunes.currentTrack get];
+         self.ratingToApply = rating;
+
+         if (self.announceNewRatingMenuItem.state == NSOnState)
+            [self.speechSynth startSpeakingString:[NSString stringWithFormat:@"%ld star, delayed", (long)rating/20]];
+      }
+      else
+      {
+         // No need to apply rating if it's already set to this value, however still inform user that it was set
+         if (self.iTunes.currentTrack.ratingKind == iTunesERtKComputed || self.iTunes.currentTrack.rating != rating)
+            self.iTunes.currentTrack.rating = rating;
+
+         if (self.announceNewRatingMenuItem.state == NSOnState)
+            [self.speechSynth startSpeakingString:[NSString stringWithFormat:@"%ld star", (long)self.iTunes.currentTrack.rating/20]];
+      }
    }
    
-   // Gimiky speech
+   // "Say" the current rating
    if (remoteID == 153 && buttonCode == 1)
-      [self.speechSynth startSpeakingString:[NSString stringWithFormat:@"%ld star", (long)self.iTunes.currentTrack.rating/20]];
+   {
+      // Album rating is spoken if the current track has no rating set but has a user set album rating
+      if (self.iTunes.currentTrack.ratingKind == iTunesERtKComputed && self.iTunes.currentTrack.albumRatingKind == iTunesERtKUser)
+         [self.speechSynth startSpeakingString:[NSString stringWithFormat:@"Album rating, %ld star", (long)self.iTunes.currentTrack.albumRating/20]];
+      else if (self.iTunes.currentTrack.ratingKind == iTunesERtKComputed || self.iTunes.currentTrack.rating == 0)
+         [self.speechSynth startSpeakingString:@"No rating"];
+      else
+         [self.speechSynth startSpeakingString:[NSString stringWithFormat:@"%ld star", (long)self.iTunes.currentTrack.rating/20]];
+   }
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -134,6 +162,28 @@
 }
 
 //////////////////////////////////////////////////////////////////////////////
+// Notifications
+//////////////////////////////////////////////////////////////////////////////
+#pragma mark - Notifications
+
+- (void)iTunesTrackChange:(NSNotification *)notification
+{
+   iTunesTrack *currentTrack = self.iTunes.currentTrack;
+   iTunesTrack *oldTrack = [self.trackToBeRated get];
+
+   // Finished playing the delayed rating track?
+   if (oldTrack.exists && ! [oldTrack.persistentID isEqualToString:currentTrack.persistentID])
+   {
+      oldTrack.rating = self.ratingToApply;
+      self.trackToBeRated = nil;
+   }
+   
+   if (self.announceUnratedMenuItem.state == NSOnState && self.iTunes.playerState == iTunesEPlSPlaying &&
+       (currentTrack.rating == 0 || currentTrack.ratingKind == iTunesERtKComputed))
+      [self.speechSynth startSpeakingString:@"No rating"];
+}
+
+//////////////////////////////////////////////////////////////////////////////
 // Private
 //////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private
@@ -148,16 +198,18 @@
                            informativeTextWithFormat:@"Unable to start IR Remote in exclusive mode. Close all other IR apps then try again."];
       [alert runModal];
       
-      [self.enableRemoteItem setEnabled:TRUE];
-      [self.disableRemoteItem setEnabled:FALSE];
+      [self.enableRemoteMenuItem setEnabled:TRUE];
+      [self.disableRemoteMenuItem setEnabled:FALSE];
    }
    else
    {
       // Start using HIDRemote ..
       [[HIDRemote sharedHIDRemote] setDelegate:self];
       
-      [self.enableRemoteItem setEnabled:FALSE];
-      [self.disableRemoteItem setEnabled:TRUE];
+      [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(iTunesTrackChange:) name:IRiTunesNotificationStateChange object:nil];
+      
+      [self.enableRemoteMenuItem setEnabled:FALSE];
+      [self.disableRemoteMenuItem setEnabled:TRUE];
    }
 }
 
@@ -166,8 +218,10 @@
    [[HIDRemote sharedHIDRemote] stopRemoteControl];
    [[HIDRemote sharedHIDRemote] setDelegate:nil];
    
-   [self.enableRemoteItem setEnabled:TRUE];
-   [self.disableRemoteItem setEnabled:FALSE];
+   [[NSDistributedNotificationCenter defaultCenter] removeObserver:self name:IRiTunesNotificationStateChange object:nil];
+   
+   [self.enableRemoteMenuItem setEnabled:TRUE];
+   [self.disableRemoteMenuItem setEnabled:FALSE];
 }
 
 - (void)terminateApp:(id)sender
