@@ -8,34 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		4E1857461729D18100B666D5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1857451729D18100B666D5 /* Cocoa.framework */; };
-		4E1857501729D18100B666D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E18574E1729D18100B666D5 /* InfoPlist.strings */; };
-		4E1857521729D18100B666D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1857511729D18100B666D5 /* main.m */; };
-		4E1857561729D18100B666D5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4E1857541729D18100B666D5 /* Credits.rtf */; };
-		4E1857591729D18100B666D5 /* IRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1857581729D18100B666D5 /* IRAppDelegate.m */; };
-		4E18575C1729D18200B666D5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E18575A1729D18200B666D5 /* MainMenu.xib */; };
-		4E18577C1729D1B600B666D5 /* HIDRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E18577B1729D1B600B666D5 /* HIDRemote.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		4E18577E1729D24700B666D5 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E18577D1729D24700B666D5 /* IOKit.framework */; };
 		4E1857821729E87B00B666D5 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1857811729E87B00B666D5 /* ScriptingBridge.framework */; };
+		4E9CD2B8172C3CE600E608AC /* HIDRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9CD2B7172C3CE600E608AC /* HIDRemote.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4E9CD2BB172C3D0200E608AC /* IRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9CD2BA172C3D0200E608AC /* IRAppDelegate.m */; };
+		4E9CD2BF172C3D1500E608AC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2BD172C3D1500E608AC /* MainMenu.xib */; };
+		4E9CD2C4172C3D3500E608AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9CD2C2172C3D3500E608AC /* main.m */; };
+		4E9CD2C9172C3D4100E608AC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2C5172C3D4100E608AC /* Credits.rtf */; };
+		4E9CD2CA172C3D4100E608AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2C7172C3D4100E608AC /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4E1857421729D18100B666D5 /* irMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = irMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E1857421729D18100B666D5 /* iris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E1857451729D18100B666D5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		4E18574D1729D18100B666D5 /* irMusic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "irMusic-Info.plist"; sourceTree = "<group>"; };
-		4E18574F1729D18100B666D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4E1857511729D18100B666D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4E1857531729D18100B666D5 /* irMusic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "irMusic-Prefix.pch"; sourceTree = "<group>"; };
-		4E1857551729D18100B666D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		4E1857571729D18100B666D5 /* IRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IRAppDelegate.h; sourceTree = "<group>"; };
-		4E1857581729D18100B666D5 /* IRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IRAppDelegate.m; sourceTree = "<group>"; };
-		4E18575B1729D18200B666D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		4E18577A1729D1B600B666D5 /* HIDRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDRemote.h; sourceTree = "<group>"; };
-		4E18577B1729D1B600B666D5 /* HIDRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDRemote.m; sourceTree = "<group>"; };
 		4E18577D1729D24700B666D5 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		4E18577F1729E6F400B666D5 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
 		4E1857811729E87B00B666D5 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		4E9CD2B2172C173700E608AC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		4E9CD2B4172C1A7700E608AC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4E9CD2B6172C3CE600E608AC /* HIDRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIDRemote.h; path = iris/HIDRemote/HIDRemote.h; sourceTree = SOURCE_ROOT; };
+		4E9CD2B7172C3CE600E608AC /* HIDRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIDRemote.m; path = iris/HIDRemote/HIDRemote.m; sourceTree = SOURCE_ROOT; };
+		4E9CD2B9172C3D0200E608AC /* IRAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IRAppDelegate.h; path = iris/IRAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		4E9CD2BA172C3D0200E608AC /* IRAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IRAppDelegate.m; path = iris/IRAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		4E9CD2BC172C3D0C00E608AC /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iTunes.h; path = iris/iTunes.h; sourceTree = SOURCE_ROOT; };
+		4E9CD2BE172C3D1500E608AC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iris/en.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
+		4E9CD2C0172C3D3500E608AC /* iris-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "iris-Info.plist"; path = "iris/iris-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4E9CD2C1172C3D3500E608AC /* iris-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "iris-Prefix.pch"; path = "iris/iris-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		4E9CD2C2172C3D3500E608AC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = iris/main.m; sourceTree = SOURCE_ROOT; };
+		4E9CD2C6172C3D4100E608AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = iris/en.lproj/Credits.rtf; sourceTree = SOURCE_ROOT; };
+		4E9CD2C8172C3D4100E608AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = iris/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 			children = (
 				4E9CD2B4172C1A7700E608AC /* AppKit.framework */,
 				4E9CD2B2172C173700E608AC /* AVFoundation.framework */,
-				4E18574B1729D18100B666D5 /* irMusic */,
+				4E18574B1729D18100B666D5 /* iris */,
 				4E1857441729D18100B666D5 /* Frameworks */,
 				4E1857431729D18100B666D5 /* Products */,
 			);
@@ -66,7 +66,7 @@
 		4E1857431729D18100B666D5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E1857421729D18100B666D5 /* irMusic.app */,
+				4E1857421729D18100B666D5 /* iris.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,28 +81,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4E18574B1729D18100B666D5 /* irMusic */ = {
+		4E18574B1729D18100B666D5 /* iris */ = {
 			isa = PBXGroup;
 			children = (
 				4E1857791729D1B600B666D5 /* HIDRemote */,
-				4E1857571729D18100B666D5 /* IRAppDelegate.h */,
-				4E1857581729D18100B666D5 /* IRAppDelegate.m */,
-				4E18577F1729E6F400B666D5 /* iTunes.h */,
-				4E18575A1729D18200B666D5 /* MainMenu.xib */,
+				4E9CD2B9172C3D0200E608AC /* IRAppDelegate.h */,
+				4E9CD2BA172C3D0200E608AC /* IRAppDelegate.m */,
+				4E9CD2BC172C3D0C00E608AC /* iTunes.h */,
+				4E9CD2BD172C3D1500E608AC /* MainMenu.xib */,
 				4E18574C1729D18100B666D5 /* Supporting Files */,
 			);
-			name = irMusic;
+			name = iris;
 			path = irmapping;
 			sourceTree = "<group>";
 		};
 		4E18574C1729D18100B666D5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4E18574D1729D18100B666D5 /* irMusic-Info.plist */,
-				4E18574E1729D18100B666D5 /* InfoPlist.strings */,
-				4E1857511729D18100B666D5 /* main.m */,
-				4E1857531729D18100B666D5 /* irMusic-Prefix.pch */,
-				4E1857541729D18100B666D5 /* Credits.rtf */,
+				4E9CD2C5172C3D4100E608AC /* Credits.rtf */,
+				4E9CD2C7172C3D4100E608AC /* InfoPlist.strings */,
+				4E9CD2C0172C3D3500E608AC /* iris-Info.plist */,
+				4E9CD2C1172C3D3500E608AC /* iris-Prefix.pch */,
+				4E9CD2C2172C3D3500E608AC /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -110,8 +110,8 @@
 		4E1857791729D1B600B666D5 /* HIDRemote */ = {
 			isa = PBXGroup;
 			children = (
-				4E18577A1729D1B600B666D5 /* HIDRemote.h */,
-				4E18577B1729D1B600B666D5 /* HIDRemote.m */,
+				4E9CD2B6172C3CE600E608AC /* HIDRemote.h */,
+				4E9CD2B7172C3CE600E608AC /* HIDRemote.m */,
 			);
 			path = HIDRemote;
 			sourceTree = "<group>";
@@ -119,9 +119,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4E1857411729D18100B666D5 /* irMusic */ = {
+		4E1857411729D18100B666D5 /* iris */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E1857731729D18200B666D5 /* Build configuration list for PBXNativeTarget "irMusic" */;
+			buildConfigurationList = 4E1857731729D18200B666D5 /* Build configuration list for PBXNativeTarget "iris" */;
 			buildPhases = (
 				4E18573E1729D18100B666D5 /* Sources */,
 				4E18573F1729D18100B666D5 /* Frameworks */,
@@ -131,9 +131,9 @@
 			);
 			dependencies = (
 			);
-			name = irMusic;
+			name = iris;
 			productName = irmapping;
-			productReference = 4E1857421729D18100B666D5 /* irMusic.app */;
+			productReference = 4E1857421729D18100B666D5 /* iris.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -146,7 +146,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Gary Preston";
 			};
-			buildConfigurationList = 4E18573D1729D18100B666D5 /* Build configuration list for PBXProject "irMusic" */;
+			buildConfigurationList = 4E18573D1729D18100B666D5 /* Build configuration list for PBXProject "iris" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -158,7 +158,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4E1857411729D18100B666D5 /* irMusic */,
+				4E1857411729D18100B666D5 /* iris */,
 			);
 		};
 /* End PBXProject section */
@@ -168,9 +168,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E1857501729D18100B666D5 /* InfoPlist.strings in Resources */,
-				4E1857561729D18100B666D5 /* Credits.rtf in Resources */,
-				4E18575C1729D18200B666D5 /* MainMenu.xib in Resources */,
+				4E9CD2BF172C3D1500E608AC /* MainMenu.xib in Resources */,
+				4E9CD2C9172C3D4100E608AC /* Credits.rtf in Resources */,
+				4E9CD2CA172C3D4100E608AC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,37 +181,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E1857521729D18100B666D5 /* main.m in Sources */,
-				4E1857591729D18100B666D5 /* IRAppDelegate.m in Sources */,
-				4E18577C1729D1B600B666D5 /* HIDRemote.m in Sources */,
+				4E9CD2B8172C3CE600E608AC /* HIDRemote.m in Sources */,
+				4E9CD2BB172C3D0200E608AC /* IRAppDelegate.m in Sources */,
+				4E9CD2C4172C3D3500E608AC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4E18574E1729D18100B666D5 /* InfoPlist.strings */ = {
+		4E9CD2BD172C3D1500E608AC /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4E18574F1729D18100B666D5 /* en */,
+				4E9CD2BE172C3D1500E608AC /* en */,
 			);
-			name = InfoPlist.strings;
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		4E1857541729D18100B666D5 /* Credits.rtf */ = {
+		4E9CD2C5172C3D4100E608AC /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4E1857551729D18100B666D5 /* en */,
+				4E9CD2C6172C3D4100E608AC /* en */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		4E18575A1729D18200B666D5 /* MainMenu.xib */ = {
+		4E9CD2C7172C3D4100E608AC /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4E18575B1729D18200B666D5 /* en */,
+				4E9CD2C8172C3D4100E608AC /* en */,
 			);
-			name = MainMenu.xib;
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -281,9 +281,9 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "irmapping/irMusic-Prefix.pch";
-				INFOPLIST_FILE = "irmapping/irMusic-Info.plist";
-				PRODUCT_NAME = irMusic;
+				GCC_PREFIX_HEADER = "iris/iris-Prefix.pch";
+				INFOPLIST_FILE = "iris/iris-Info.plist";
+				PRODUCT_NAME = iris;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -293,9 +293,9 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "irmapping/irMusic-Prefix.pch";
-				INFOPLIST_FILE = "irmapping/irMusic-Info.plist";
-				PRODUCT_NAME = irMusic;
+				GCC_PREFIX_HEADER = "iris/iris-Prefix.pch";
+				INFOPLIST_FILE = "iris/iris-Info.plist";
+				PRODUCT_NAME = iris;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -303,7 +303,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4E18573D1729D18100B666D5 /* Build configuration list for PBXProject "irMusic" */ = {
+		4E18573D1729D18100B666D5 /* Build configuration list for PBXProject "iris" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E1857711729D18200B666D5 /* Debug */,
@@ -312,7 +312,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E1857731729D18200B666D5 /* Build configuration list for PBXNativeTarget "irMusic" */ = {
+		4E1857731729D18200B666D5 /* Build configuration list for PBXNativeTarget "iris" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E1857741729D18200B666D5 /* Debug */,

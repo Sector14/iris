@@ -126,7 +126,7 @@
 					</object>
 					<object class="NSMenuItem" id="238522557">
 						<reference key="NSMenu" ref="54199416"/>
-						<string key="NSTitle">About irMusic</string>
+						<string key="NSTitle">About iris</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="476583685"/>

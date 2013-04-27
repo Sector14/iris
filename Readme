@@ -1,7 +1,7 @@
-About irMusic
-=============
+About Iris
+==========
 
-  irMusic works in conjunction with a smart remote such as the Logitech Harmony
+  Iris works in conjunction with a smart remote such as the Logitech Harmony
   One which can emulate several Apple IR remotes. The basic play/pause/skip/stop
   functionality will control iTunes as normal, however, additional buttons such
   as 1..5 will rate the currently playing track and the "info" button will speak the
@@ -11,8 +11,9 @@ About irMusic
 Usage
 =====
 
-  Once your remote has been correctly configured, simply start iTunes and the irMusic app.
-  Anytime you want to rate a song, press 1 to 5 on your remote.
+  Once your remote has been correctly configured (see Remote Setup), simply start 
+  iTunes and the irMusic app. Anytime you want to rate a song, press 1 to 5 on your
+  remote.
 
   To hear the rating for the currently playing song, press "info"
 
@@ -55,9 +56,6 @@ Remote Setup
   Add a new device using "media center PC", plex, plex player with a suitable
   name e.g "Plex Mac Mini"
 
-  The default bindings are suitable for controlling plex, but will need remapping
-  for iTunes control. 
-
   Create a new activity (note some steps may differ depending on whether you
   use an AV Receiver or not):
      No - manually add an activity to my setup
@@ -95,7 +93,7 @@ Third Party Code
 ================
   
   This app uses the HIDRemote class by IOSpirit (www.iospirit.com/developers/) under the
-  following license. The latest code for this class is available via the IOSpirit website.
+  following license.
 
     Copyright (c) 2007-2011 IOSPIRIT GmbH (http://www.iospirit.com/)
     All rights reserved.
