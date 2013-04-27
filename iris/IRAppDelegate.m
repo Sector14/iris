@@ -57,24 +57,44 @@
 
 - (void)hidRemote:(HIDRemote *)hidRemote eventWithButton:(HIDRemoteButtonCode)buttonCode isPressed:(BOOL)isPressed fromHardwareWithAttributes:(NSMutableDictionary *)attributes
 {
-   if (! self.iTunes.isRunning || ! isPressed)
+   NSLog(@"%d %d, isPressed %@", hidRemote.lastSeenRemoteControlID, buttonCode, isPressed ? @"YES" : @"NO");
+   
+   if (! self.iTunes.isRunning)
       return;
    
    SInt32 remoteID = hidRemote.lastSeenRemoteControlID;
    
+   // Stop FFwd/Rewind only if it's a held version been released.
+   if (! isPressed && remoteID == 154 && (buttonCode == 65537 || buttonCode == 65538))
+      [self.iTunes resume];
+
+   if (! isPressed)
+      return;
+   
    // TODO: Add enum for remoteID/buttonCode and mapping for callbacks instead of hardcoding.
+   
    // Standard Playback Controls
-   if ((remoteID == 151 || remoteID == 152) && buttonCode == 6)
-      [self.iTunes playpause];
+   if (remoteID == 151 && buttonCode == 6)
+   {
+      if (self.iTunes.playerState == iTunesEPlSFastForwarding || self.iTunes.playerState == iTunesEPlSRewinding)
+         [self.iTunes resume];
+      else if (self.iTunes.playerState != iTunesEPlSPlaying)
+         [self.iTunes playpause];
+   }
+   else if (remoteID == 152 && buttonCode == 6)
+   {
+      if (self.iTunes.playerState == iTunesEPlSPlaying)
+         [self.iTunes playpause];
+   }
    else if (remoteID == 151 && buttonCode == 5)
       [self.iTunes stop];
    else if (remoteID == 160 && buttonCode == 1)
       [self.iTunes previousTrack];
    else if (remoteID == 160 && buttonCode == 2)
       [self.iTunes nextTrack];
-   else if (remoteID == 154 && buttonCode == 1)
+   else if (remoteID == 154 && (buttonCode == 1 || buttonCode == 65537))
       [self.iTunes rewind];
-   else if (remoteID == 154 && buttonCode == 2)
+   else if (remoteID == 154 && (buttonCode == 2 || buttonCode == 65538))
       [self.iTunes fastForward];
    
    // Song Ratings
