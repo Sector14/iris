@@ -53,6 +53,21 @@
    [self disableRemote];
 }
 
+- (IBAction)toggleAnnounceNewRating:(NSMenuItem *)sender
+{
+   self.announceNewRatingMenuItem.state = (self.announceNewRatingMenuItem.state == NSOnState ? NSOffState : NSOnState);
+}
+
+- (IBAction)toggleAnnounceUnrated:(NSMenuItem *)sender
+{
+   self.announceUnratedMenuItem.state = (self.announceUnratedMenuItem.state == NSOnState ? NSOffState : NSOnState);
+}
+
+- (IBAction)toggleDelayedRating:(NSMenuItem *)sender
+{
+   self.delayedRatingMenuItem.state = (self.delayedRatingMenuItem.state == NSOnState ? NSOffState : NSOnState);
+}
+
 //////////////////////////////////////////////////////////////////////////////
 // Remote Delegate
 //////////////////////////////////////////////////////////////////////////////
@@ -191,10 +206,12 @@
 {
    iTunesTrack *currentTrack = self.iTunes.currentTrack;
    iTunesTrack *oldTrack = [self.trackToBeRated get];
-
+   NSLog(@"Track State Change: %@, %@, %@", self.iTunes.currentTrack.name, self.trackToBeRated.name, oldTrack.name);
+   
    // Finished playing the delayed rating track?
    if (oldTrack.exists && ! [oldTrack.persistentID isEqualToString:currentTrack.persistentID])
    {
+      NSLog(@"Applying rating %ld to %@", self.ratingToApply, oldTrack.name);
       oldTrack.rating = self.ratingToApply;
       self.trackToBeRated = nil;
    }

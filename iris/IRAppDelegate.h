@@ -25,4 +25,8 @@
 - (IBAction)enableIR:(id)sender;
 - (IBAction)disableIR:(id)sender;
 
+- (IBAction)toggleAnnounceNewRating:(NSMenuItem *)sender;
+- (IBAction)toggleAnnounceUnrated:(NSMenuItem *)sender;
+- (IBAction)toggleDelayedRating:(NSMenuItem *)sender;
+
 @end
