@@ -12,6 +12,9 @@
 
 #define IRiTunesNotificationStateChange @"com.apple.iTunes.playerInfo"
 
+#define IRStatusEnabledImage  @"status_enabled"
+#define IRStatusDisabledImage @"status_disabled"
+
 @interface IRAppDelegate()
 
 @property (nonatomic, strong) iTunesApplication *iTunes;
@@ -56,9 +59,7 @@
 #pragma mark - Remote Delegate
 
 - (void)hidRemote:(HIDRemote *)hidRemote eventWithButton:(HIDRemoteButtonCode)buttonCode isPressed:(BOOL)isPressed fromHardwareWithAttributes:(NSMutableDictionary *)attributes
-{
-   NSLog(@"%d %d, isPressed %@", hidRemote.lastSeenRemoteControlID, buttonCode, isPressed ? @"YES" : @"NO");
-   
+{  
    if (! self.iTunes.isRunning)
       return;
    
@@ -159,8 +160,8 @@
    // TODO: Change this to a nice icon with greyed out version for disabled state
    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
    [self.statusItem setMenu:self.statusMenu];
-   [self.statusItem setTitle:@"Iris"];
    [self.statusItem setHighlightMode:YES];
+   [self.statusItem setImage:[NSImage imageNamed:IRStatusDisabledImage]];
 
    if ([HIDRemote isCandelairInstallationRequiredForRemoteMode:kHIDRemoteModeExclusive])
    {
@@ -231,6 +232,8 @@
       [self.enableRemoteMenuItem setEnabled:FALSE];
       [self.disableRemoteMenuItem setEnabled:TRUE];
    }
+   
+   [self.statusItem setImage:[NSImage imageNamed:(self.enableRemoteMenuItem.isEnabled ? IRStatusDisabledImage : IRStatusEnabledImage)]];
 }
 
 - (void)disableRemote
@@ -242,6 +245,7 @@
    
    [self.enableRemoteMenuItem setEnabled:TRUE];
    [self.disableRemoteMenuItem setEnabled:FALSE];
+   [self.statusItem setImage:[NSImage imageNamed:IRStatusDisabledImage]];
 }
 
 - (void)terminateApp:(id)sender

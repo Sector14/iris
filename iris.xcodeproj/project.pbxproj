@@ -17,6 +17,8 @@
 		4E9CD2C9172C3D4100E608AC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2C5172C3D4100E608AC /* Credits.rtf */; };
 		4E9CD2CA172C3D4100E608AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2C7172C3D4100E608AC /* InfoPlist.strings */; };
 		4E9CD2DC172C4F9300E608AC /* iris.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2DB172C4F9300E608AC /* iris.icns */; };
+		4E9CD2E3172C6DAE00E608AC /* status_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2E1172C6DAE00E608AC /* status_disabled.png */; };
+		4E9CD2E4172C6DAE00E608AC /* status_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2E2172C6DAE00E608AC /* status_enabled.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		4E9CD2C6172C3D4100E608AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = iris/en.lproj/Credits.rtf; sourceTree = SOURCE_ROOT; };
 		4E9CD2C8172C3D4100E608AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = iris/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		4E9CD2DB172C4F9300E608AC /* iris.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = iris.icns; sourceTree = "<group>"; };
+		4E9CD2E1172C6DAE00E608AC /* status_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_disabled.png; path = iris/Resources/status_disabled.png; sourceTree = SOURCE_ROOT; };
+		4E9CD2E2172C6DAE00E608AC /* status_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_enabled.png; path = iris/Resources/status_enabled.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		4E18574C1729D18100B666D5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4E9CD2E1172C6DAE00E608AC /* status_disabled.png */,
+				4E9CD2E2172C6DAE00E608AC /* status_enabled.png */,
 				4E9CD2C5172C3D4100E608AC /* Credits.rtf */,
 				4E9CD2C7172C3D4100E608AC /* InfoPlist.strings */,
 				4E9CD2C0172C3D3500E608AC /* iris-Info.plist */,
@@ -171,6 +177,8 @@
 				4E9CD2C9172C3D4100E608AC /* Credits.rtf in Resources */,
 				4E9CD2CA172C3D4100E608AC /* InfoPlist.strings in Resources */,
 				4E9CD2DC172C4F9300E608AC /* iris.icns in Resources */,
+				4E9CD2E3172C6DAE00E608AC /* status_disabled.png in Resources */,
+				4E9CD2E4172C6DAE00E608AC /* status_enabled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
