@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSStatusItem *statusItem;
 
 @property (nonatomic, strong) iTunesTrack *trackToBeRated;
+@property (nonatomic, copy) NSString *trackIDToBeRated;
 @property (nonatomic, assign) NSUInteger ratingToApply;
 
 - (void)enableRemote;
@@ -74,7 +75,7 @@
 #pragma mark - Remote Delegate
 
 - (void)hidRemote:(HIDRemote *)hidRemote eventWithButton:(HIDRemoteButtonCode)buttonCode isPressed:(BOOL)isPressed fromHardwareWithAttributes:(NSMutableDictionary *)attributes
-{  
+{
    if (! self.iTunes.isRunning)
       return;
    
@@ -123,26 +124,30 @@
    else if (remoteID == 154 && buttonCode == 4)
       rating = 0;
 
-   if (rating != -1)
+   // Rating hasn't change, inform user anyway
+   if (self.iTunes.currentTrack.ratingKind != iTunesERtKComputed && self.iTunes.currentTrack.rating == rating)
+   {
+      if (self.announceNewRatingMenuItem.state == NSOnState)
+         [self.speechSynth startSpeakingString:[NSString stringWithFormat:@"%ld star", (long)self.iTunes.currentTrack.rating/20]];
+   }
+   else if (rating != -1)
    {
       iTunesSource *lib = [self.iTunes.sources objectWithName:@"Library"];
-      
       iTunesUserPlaylist *pl = [lib.userPlaylists objectWithName:self.iTunes.currentPlaylist.name];
 
-      // Delay application of rating until track changes but only for smart playlists which could be live updating
+      // Track may be removed from smart playlists due to new rating, delay applying.
       if (pl.exists && pl.smart && self.delayedRatingMenuItem.state == NSOnState)
       {
          self.trackToBeRated = [self.iTunes.currentTrack get];
+         self.trackIDToBeRated = self.iTunes.currentTrack.persistentID;
          self.ratingToApply = rating;
-
+         
          if (self.announceNewRatingMenuItem.state == NSOnState)
-            [self.speechSynth startSpeakingString:[NSString stringWithFormat:@"%ld star, delayed", (long)rating/20]];
+            [self.speechSynth startSpeakingString:[NSString stringWithFormat:@"%ld star, delayed", self.ratingToApply/20]];
       }
       else
       {
-         // No need to apply rating if it's already set to this value, however still inform user that it was set
-         if (self.iTunes.currentTrack.ratingKind == iTunesERtKComputed || self.iTunes.currentTrack.rating != rating)
-            self.iTunes.currentTrack.rating = rating;
+         self.iTunes.currentTrack.rating = rating;
 
          if (self.announceNewRatingMenuItem.state == NSOnState)
             [self.speechSynth startSpeakingString:[NSString stringWithFormat:@"%ld star", (long)self.iTunes.currentTrack.rating/20]];
@@ -172,7 +177,6 @@
    _speechSynth = [[NSSpeechSynthesizer alloc] initWithVoice:nil];
    self.iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
    
-   // TODO: Change this to a nice icon with greyed out version for disabled state
    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
    [self.statusItem setMenu:self.statusMenu];
    [self.statusItem setHighlightMode:YES];
@@ -205,15 +209,36 @@
 - (void)iTunesTrackChange:(NSNotification *)notification
 {
    iTunesTrack *currentTrack = self.iTunes.currentTrack;
-   iTunesTrack *oldTrack = [self.trackToBeRated get];
-   NSLog(@"Track State Change: %@, %@, %@", self.iTunes.currentTrack.name, self.trackToBeRated.name, oldTrack.name);
-   
-   // Finished playing the delayed rating track?
-   if (oldTrack.exists && ! [oldTrack.persistentID isEqualToString:currentTrack.persistentID])
+
+   // Track changed
+   if (! [currentTrack.persistentID isEqualToString:self.trackIDToBeRated])
    {
-      NSLog(@"Applying rating %ld to %@", self.ratingToApply, oldTrack.name);
-      oldTrack.rating = self.ratingToApply;
+      // Reference still valid?
+      if (self.trackToBeRated.exists && [self.trackToBeRated.persistentID isEqualToString:self.trackIDToBeRated])
+         self.trackToBeRated.rating = self.ratingToApply;
+      else
+      {
+         // Reference is no longer valid, the track has likley been automatically removed from a smart playlist.
+         // Locate via persistent ID
+         iTunesSource *lib = [self.iTunes.sources objectWithName:@"Library"];
+         iTunesLibraryPlaylist *pl = [lib.libraryPlaylists objectWithName:@"Library"];
+
+         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"persistentID == %@", self.trackIDToBeRated];
+         NSArray *arr = [pl.tracks filteredArrayUsingPredicate:predicate];
+      
+         if (arr.count == 1)
+         {
+            iTunesTrack *track = arr[0];
+            //NSLog(@"Updating rating of %@ from %ld to %ld", track.name, (long)track.rating, (long)self.ratingToApply);
+            track.rating = self.ratingToApply;
+         }
+         else
+            NSLog(@"Unable to apply rating for persistentID %@. Expected one track, found %ld.", self.trackIDToBeRated, (unsigned long)arr.count);
+      }
+      
+      self.trackIDToBeRated = nil;
       self.trackToBeRated = nil;
+      self.ratingToApply = -1;
    }
    
    if (self.announceUnratedMenuItem.state == NSOnState && self.iTunes.playerState == iTunesEPlSPlaying &&

@@ -6,7 +6,7 @@
 #import <ScriptingBridge/ScriptingBridge.h>
 
 
-@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;
 
 enum iTunesEKnd {
 	iTunesEKndTrackListing = 'kTrk' /* a basic listing of tracks within a playlist */,
@@ -49,7 +49,6 @@ enum iTunesESrc {
 	iTunesESrcIPod = 'kPod',
 	iTunesESrcAudioCD = 'kACD',
 	iTunesESrcMP3CD = 'kMCD',
-	iTunesESrcDevice = 'kDev',
 	iTunesESrcRadioTuner = 'kTun',
 	iTunesESrcSharedLibrary = 'kShd',
 	iTunesESrcUnknown = 'kUnk'
@@ -75,7 +74,6 @@ enum iTunesESpK {
 	iTunesESpKLibrary = 'kSpL',
 	iTunesESpKMovies = 'kSpI',
 	iTunesESpKMusic = 'kSpZ',
-	iTunesESpKPartyShuffle = 'kSpS',
 	iTunesESpKPodcasts = 'kSpP',
 	iTunesESpKPurchasedMusic = 'kSpM',
 	iTunesESpKTVShows = 'kSpT'
@@ -196,7 +194,7 @@ typedef enum iTunesERtK iTunesERtK;
 - (NSInteger) id;  // the id of the item
 @property (readonly) NSInteger index;  // The index of the item in internal application order.
 @property (copy) NSString *name;  // the name of the item
-@property (copy, readonly) NSString *persistentID;  // the id of the item as a hexidecimal string. This id does not change over time.
+@property (copy, readonly) NSString *persistentID;  // the id of the item as a hexadecimal string. This id does not change over time.
 
 - (void) printPrintDialog:(BOOL)printDialog withProperties:(iTunesPrintSettings *)withProperties kind:(iTunesEKnd)kind theme:(NSString *)theme;  // Print the specified object(s)
 - (void) close;  // Close an object
@@ -286,14 +284,6 @@ typedef enum iTunesERtK iTunesERtK;
 
 @end
 
-// a playlist representing the contents of a portable device
-@interface iTunesDevicePlaylist : iTunesPlaylist
-
-- (SBElementArray *) deviceTracks;
-
-
-@end
-
 // the master music library playlist
 @interface iTunesLibraryPlaylist : iTunesPlaylist
 
@@ -316,7 +306,6 @@ typedef enum iTunesERtK iTunesERtK;
 @interface iTunesSource : iTunesItem
 
 - (SBElementArray *) audioCDPlaylists;
-- (SBElementArray *) devicePlaylists;
 - (SBElementArray *) libraryPlaylists;
 - (SBElementArray *) playlists;
 - (SBElementArray *) radioTunerPlaylists;
@@ -402,12 +391,6 @@ typedef enum iTunesERtK iTunesERtK;
 @interface iTunesAudioCDTrack : iTunesTrack
 
 @property (copy, readonly) NSURL *location;  // the location of the file represented by this track
-
-
-@end
-
-// a track residing on a portable music player
-@interface iTunesDeviceTrack : iTunesTrack
 
 
 @end
