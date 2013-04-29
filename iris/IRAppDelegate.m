@@ -210,8 +210,7 @@
 {
    iTunesTrack *currentTrack = self.iTunes.currentTrack;
 
-   // Track changed
-   if (! [currentTrack.persistentID isEqualToString:self.trackIDToBeRated])
+   if (self.trackIDToBeRated != nil && ! [currentTrack.persistentID isEqualToString:self.trackIDToBeRated])
    {
       // Reference still valid?
       if (self.trackToBeRated.exists && [self.trackToBeRated.persistentID isEqualToString:self.trackIDToBeRated])

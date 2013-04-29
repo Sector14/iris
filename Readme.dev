@@ -4,10 +4,15 @@ Future Improvements
 
   The following lists possible improvements/new features. These may or may not ever happen.
 
+  - Store various announcement option settings in user defaults.
+  - Add use of f1-.. to toggle functionality eg f1 turns on/off announce unrated, f2 announce new rating, f3 delayed ratings on/off
+    or using any other available plex ir command
+  - Rename buttons in logitech profile to reflect this.
+  - Guide button to say name of album/track?
+  - option to flag tracks as damaged and apply other tags? 
+  - UI option to set which button sets which tag
   - Allow app to run in exclusive or exclusive auto modes
-  - Allow custom buttons to start a specified playlist e.g renamed F1..F14
-  - Make fast fwd/rewind stop occuring when the release event occurs (assuming this is
-    sufficiently exposed by HID remote)
+  - Allow custom buttons to start a specified playlist 
 
 
 How It Works
