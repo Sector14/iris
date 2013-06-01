@@ -87,62 +87,25 @@ Remote Setup
   work, they're unsupported. Feel free to experiment, but please don't complain if
   anything breaks.
 
+Contact
+=======
+
   Please report any bugs or feature suggestions to gary@mups.co.uk
 
   If you find this application useful, please consider making a monetary donation
   via paypal using this link.
  
-    https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MCF3ZYDGJ64EG 
+  https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MCF3ZYDGJ64EG 
 
-  Alternatively click the "Donate" button on the application "About Iris" menu.
+  Alternatively click the "Donate" button within the application "About Iris" menu.
 
-Third Party Code
-================
-  
-  This app uses the HIDRemote class by IOSpirit (www.iospirit.com/developers/) under the
-  following license.
-
-    Copyright (c) 2007-2011 IOSPIRIT GmbH (http://www.iospirit.com/)
-    All rights reserved.
-    
-    Redistribution and use in source and binary forms, with or without modification,
-    are permitted provided that the following conditions are met:
-    
-    * Redistributions of source code must retain the above copyright notice, this list
-      of conditions and the following disclaimer.
-    
-    * Redistributions in binary form must reproduce the above copyright notice, this
-      list of conditions and the following disclaimer in the documentation and/or other
-      materials provided with the distribution.
-    
-    * Neither the name of IOSPIRIT GmbH nor the names of its contributors may be used to
-      endorse or promote products derived from this software without specific prior
-      written permission.
-    
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
-    EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-    OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
-    SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-    INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
-    TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
-    BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
-    ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
-    DAMAGE.
-  
-LICENSE
+License
 =======
-  
-  This app is Copyright 2013 by Gary Preston. All Rights Reserved.
 
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
-  EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
-  SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
-  TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
-  BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
-  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
-  DAMAGE.
+  Iris Copyright 2013 Gary Preston. 
 
+  This application also contains third party code developed by IOSpirit (www.iospirit.com) 
+
+  Please refer to License.txt for details.
+
+  Source code available at: https://bitbucket.org/burntwasp/iris
