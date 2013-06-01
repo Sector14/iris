@@ -154,3 +154,9 @@ Generating Iconset
 
 In the same dir as this readme, run "iconutil -c icns iris.iconset"
 
+App DMG
+=======
+
+Create sparseimage, drag app/readme into it. Unmount then convert with:
+ 
+  hdiutil convert iris.sparseimage -format UDBZ -o iris_v1.0.dmg
