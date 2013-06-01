@@ -1,10 +1,18 @@
 //
-//  main.m
-//  irmapping
+//  Iris - IR Remote music rating.
+//  Copyright (C) 2013 Gary Preston
 //
-//  Created by Gary Preston on 25/04/2013.
-//  Copyright (c) 2013 Gary Preston. All rights reserved.
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, version 3 of the License.
 //
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #import <Cocoa/Cocoa.h>
 
