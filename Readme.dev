@@ -149,3 +149,8 @@ Default Apple Mappings
   
   Only Menu is currently unused by iTunes  
 
+Generating Iconset
+==================
+
+In the same dir as this readme, run "iconutil -c icns iris.iconset"
+

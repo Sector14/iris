@@ -14,11 +14,11 @@
 		4E9CD2BB172C3D0200E608AC /* IRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9CD2BA172C3D0200E608AC /* IRAppDelegate.m */; };
 		4E9CD2BF172C3D1500E608AC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2BD172C3D1500E608AC /* MainMenu.xib */; };
 		4E9CD2C4172C3D3500E608AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9CD2C2172C3D3500E608AC /* main.m */; };
-		4E9CD2C9172C3D4100E608AC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2C5172C3D4100E608AC /* Credits.rtf */; };
 		4E9CD2CA172C3D4100E608AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2C7172C3D4100E608AC /* InfoPlist.strings */; };
 		4E9CD2DC172C4F9300E608AC /* iris.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2DB172C4F9300E608AC /* iris.icns */; };
 		4E9CD2E3172C6DAE00E608AC /* status_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2E1172C6DAE00E608AC /* status_disabled.png */; };
 		4E9CD2E4172C6DAE00E608AC /* status_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2E2172C6DAE00E608AC /* status_enabled.png */; };
+		4E9F95DE175A609C000BC17F /* Credits.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = 4E9F95DC175A609C000BC17F /* Credits.rtfd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +35,11 @@
 		4E9CD2C0172C3D3500E608AC /* iris-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "iris-Info.plist"; path = "iris/iris-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4E9CD2C1172C3D3500E608AC /* iris-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "iris-Prefix.pch"; path = "iris/iris-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		4E9CD2C2172C3D3500E608AC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = iris/main.m; sourceTree = SOURCE_ROOT; };
-		4E9CD2C6172C3D4100E608AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = iris/en.lproj/Credits.rtf; sourceTree = SOURCE_ROOT; };
 		4E9CD2C8172C3D4100E608AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = iris/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		4E9CD2DB172C4F9300E608AC /* iris.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = iris.icns; sourceTree = "<group>"; };
 		4E9CD2E1172C6DAE00E608AC /* status_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_disabled.png; path = iris/Resources/status_disabled.png; sourceTree = SOURCE_ROOT; };
 		4E9CD2E2172C6DAE00E608AC /* status_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_enabled.png; path = iris/Resources/status_enabled.png; sourceTree = SOURCE_ROOT; };
+		4E9F95DD175A609C000BC17F /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; name = en; path = iris/en.lproj/Credits.rtfd; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +101,9 @@
 		4E18574C1729D18100B666D5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4E9F95DC175A609C000BC17F /* Credits.rtfd */,
 				4E9CD2E1172C6DAE00E608AC /* status_disabled.png */,
 				4E9CD2E2172C6DAE00E608AC /* status_enabled.png */,
-				4E9CD2C5172C3D4100E608AC /* Credits.rtf */,
 				4E9CD2C7172C3D4100E608AC /* InfoPlist.strings */,
 				4E9CD2C0172C3D3500E608AC /* iris-Info.plist */,
 				4E9CD2C1172C3D3500E608AC /* iris-Prefix.pch */,
@@ -174,11 +174,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E9CD2BF172C3D1500E608AC /* MainMenu.xib in Resources */,
-				4E9CD2C9172C3D4100E608AC /* Credits.rtf in Resources */,
 				4E9CD2CA172C3D4100E608AC /* InfoPlist.strings in Resources */,
 				4E9CD2DC172C4F9300E608AC /* iris.icns in Resources */,
 				4E9CD2E3172C6DAE00E608AC /* status_disabled.png in Resources */,
 				4E9CD2E4172C6DAE00E608AC /* status_enabled.png in Resources */,
+				4E9F95DE175A609C000BC17F /* Credits.rtfd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,20 +206,20 @@
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		4E9CD2C5172C3D4100E608AC /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4E9CD2C6172C3D4100E608AC /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
 		4E9CD2C7172C3D4100E608AC /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4E9CD2C8172C3D4100E608AC /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4E9F95DC175A609C000BC17F /* Credits.rtfd */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E9F95DD175A609C000BC17F /* en */,
+			);
+			name = Credits.rtfd;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -4,7 +4,7 @@ About Iris
   Iris works in conjunction with a smart remote such as the Logitech Harmony
   One which can emulate several Apple IR remotes. The basic play/pause/skip/stop
   functionality will control iTunes as normal, however, additional buttons such
-  as 1..5 will rate the currently playing track and the "info" button will speak the
+  as 0..5 will rate the currently playing track and the "info" button will speak the
   current track rating.
 
 
@@ -12,8 +12,8 @@ Usage
 =====
 
   Once your remote has been correctly configured (see Remote Setup), simply start 
-  iTunes and the irMusic app. Anytime you want to rate a song, press 1 to 5 on your
-  remote.
+  iTunes and the iris app. Anytime you want to rate a song, press 1 to 5 on your
+  remote or 0 to clear the rating.
 
   To hear the rating for the currently playing song, press "info"
 
@@ -53,8 +53,8 @@ Experimental Features
 Remote Setup
 ============
 
-  Add a new device using "media center PC", plex, plex player with a suitable
-  name e.g "Plex Mac Mini"
+  For a logitech remote like the harmoney one, add a new device using
+  "media center PC", plex, plex player with a suitable name e.g "Plex Mac Mini"
 
   Create a new activity (note some steps may differ depending on whether you
   use an AV Receiver or not):
@@ -68,12 +68,12 @@ Remote Setup
      Yes these settings are correct.
      Done
 
-  Note, when using iTunes without this app running, you'll either need an activity
+  When using iTunes without this app running, you'll either need an activity
   setup to use the default apple IR settings (see logitech DB for mac mini) or
   use the dir right/left to skip and ok to play/pause.
 
   Running iTunes then this app should now allow both control of iTunes in a normal
-  way as well as rating songs by pressing the buttons 1..5 on the remote.
+  way as well as rating songs by pressing the buttons 0..5 on the remote.
  
   You may need to unpair any existing remote to allow multiple remote IDs to be
   used. However as of 10.8, even when a single remote is paired, any remote is able
