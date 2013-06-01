@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'irmapping' target in the 'irmapping' project
+//
+
+#ifdef __OBJC__
+   #import <Cocoa/Cocoa.h>
+#endif

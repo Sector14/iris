@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E1857461729D18100B666D5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1857451729D18100B666D5 /* Cocoa.framework */; };
+		4E18577E1729D24700B666D5 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E18577D1729D24700B666D5 /* IOKit.framework */; };
+		4E1857821729E87B00B666D5 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1857811729E87B00B666D5 /* ScriptingBridge.framework */; };
+		4E9CD2B8172C3CE600E608AC /* HIDRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9CD2B7172C3CE600E608AC /* HIDRemote.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4E9CD2BB172C3D0200E608AC /* IRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9CD2BA172C3D0200E608AC /* IRAppDelegate.m */; };
+		4E9CD2BF172C3D1500E608AC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2BD172C3D1500E608AC /* MainMenu.xib */; };
+		4E9CD2C4172C3D3500E608AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9CD2C2172C3D3500E608AC /* main.m */; };
+		4E9CD2CA172C3D4100E608AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2C7172C3D4100E608AC /* InfoPlist.strings */; };
+		4E9CD2DC172C4F9300E608AC /* iris.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2DB172C4F9300E608AC /* iris.icns */; };
+		4E9CD2E3172C6DAE00E608AC /* status_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2E1172C6DAE00E608AC /* status_disabled.png */; };
+		4E9CD2E4172C6DAE00E608AC /* status_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD2E2172C6DAE00E608AC /* status_enabled.png */; };
+		4E9F95DE175A609C000BC17F /* Credits.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = 4E9F95DC175A609C000BC17F /* Credits.rtfd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4E1857421729D18100B666D5 /* iris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iris.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E1857451729D18100B666D5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4E18577D1729D24700B666D5 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		4E1857811729E87B00B666D5 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		4E9CD2B6172C3CE600E608AC /* HIDRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIDRemote.h; path = iris/HIDRemote/HIDRemote.h; sourceTree = SOURCE_ROOT; };
+		4E9CD2B7172C3CE600E608AC /* HIDRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIDRemote.m; path = iris/HIDRemote/HIDRemote.m; sourceTree = SOURCE_ROOT; };
+		4E9CD2B9172C3D0200E608AC /* IRAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IRAppDelegate.h; path = iris/IRAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		4E9CD2BA172C3D0200E608AC /* IRAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IRAppDelegate.m; path = iris/IRAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		4E9CD2BC172C3D0C00E608AC /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iTunes.h; path = iris/iTunes.h; sourceTree = SOURCE_ROOT; };
+		4E9CD2BE172C3D1500E608AC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iris/en.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
+		4E9CD2C0172C3D3500E608AC /* iris-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "iris-Info.plist"; path = "iris/iris-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4E9CD2C1172C3D3500E608AC /* iris-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "iris-Prefix.pch"; path = "iris/iris-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		4E9CD2C2172C3D3500E608AC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = iris/main.m; sourceTree = SOURCE_ROOT; };
+		4E9CD2C8172C3D4100E608AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = iris/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		4E9CD2DB172C4F9300E608AC /* iris.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = iris.icns; sourceTree = "<group>"; };
+		4E9CD2E1172C6DAE00E608AC /* status_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_disabled.png; path = iris/Resources/status_disabled.png; sourceTree = SOURCE_ROOT; };
+		4E9CD2E2172C6DAE00E608AC /* status_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_enabled.png; path = iris/Resources/status_enabled.png; sourceTree = SOURCE_ROOT; };
+		4E9F95DD175A609C000BC17F /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; name = en; path = iris/en.lproj/Credits.rtfd; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E18573F1729D18100B666D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E1857821729E87B00B666D5 /* ScriptingBridge.framework in Frameworks */,
+				4E18577E1729D24700B666D5 /* IOKit.framework in Frameworks */,
+				4E1857461729D18100B666D5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E1857391729D18100B666D5 = {
+			isa = PBXGroup;
+			children = (
+				4E9CD2DB172C4F9300E608AC /* iris.icns */,
+				4E18574B1729D18100B666D5 /* iris */,
+				4E1857441729D18100B666D5 /* Frameworks */,
+				4E1857431729D18100B666D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4E1857431729D18100B666D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E1857421729D18100B666D5 /* iris.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E1857441729D18100B666D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E1857451729D18100B666D5 /* Cocoa.framework */,
+				4E18577D1729D24700B666D5 /* IOKit.framework */,
+				4E1857811729E87B00B666D5 /* ScriptingBridge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E18574B1729D18100B666D5 /* iris */ = {
+			isa = PBXGroup;
+			children = (
+				4E1857791729D1B600B666D5 /* HIDRemote */,
+				4E9CD2B9172C3D0200E608AC /* IRAppDelegate.h */,
+				4E9CD2BA172C3D0200E608AC /* IRAppDelegate.m */,
+				4E9CD2BC172C3D0C00E608AC /* iTunes.h */,
+				4E9CD2BD172C3D1500E608AC /* MainMenu.xib */,
+				4E18574C1729D18100B666D5 /* Supporting Files */,
+			);
+			name = iris;
+			path = irmapping;
+			sourceTree = "<group>";
+		};
+		4E18574C1729D18100B666D5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4E9F95DC175A609C000BC17F /* Credits.rtfd */,
+				4E9CD2E1172C6DAE00E608AC /* status_disabled.png */,
+				4E9CD2E2172C6DAE00E608AC /* status_enabled.png */,
+				4E9CD2C7172C3D4100E608AC /* InfoPlist.strings */,
+				4E9CD2C0172C3D3500E608AC /* iris-Info.plist */,
+				4E9CD2C1172C3D3500E608AC /* iris-Prefix.pch */,
+				4E9CD2C2172C3D3500E608AC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4E1857791729D1B600B666D5 /* HIDRemote */ = {
+			isa = PBXGroup;
+			children = (
+				4E9CD2B6172C3CE600E608AC /* HIDRemote.h */,
+				4E9CD2B7172C3CE600E608AC /* HIDRemote.m */,
+			);
+			path = HIDRemote;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E1857411729D18100B666D5 /* iris */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E1857731729D18200B666D5 /* Build configuration list for PBXNativeTarget "iris" */;
+			buildPhases = (
+				4E18573E1729D18100B666D5 /* Sources */,
+				4E18573F1729D18100B666D5 /* Frameworks */,
+				4E1857401729D18100B666D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iris;
+			productName = irmapping;
+			productReference = 4E1857421729D18100B666D5 /* iris.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E18573A1729D18100B666D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = IR;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Gary Preston";
+			};
+			buildConfigurationList = 4E18573D1729D18100B666D5 /* Build configuration list for PBXProject "iris" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4E1857391729D18100B666D5;
+			productRefGroup = 4E1857431729D18100B666D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E1857411729D18100B666D5 /* iris */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E1857401729D18100B666D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E9CD2BF172C3D1500E608AC /* MainMenu.xib in Resources */,
+				4E9CD2CA172C3D4100E608AC /* InfoPlist.strings in Resources */,
+				4E9CD2DC172C4F9300E608AC /* iris.icns in Resources */,
+				4E9CD2E3172C6DAE00E608AC /* status_disabled.png in Resources */,
+				4E9CD2E4172C6DAE00E608AC /* status_enabled.png in Resources */,
+				4E9F95DE175A609C000BC17F /* Credits.rtfd in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E18573E1729D18100B666D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E9CD2B8172C3CE600E608AC /* HIDRemote.m in Sources */,
+				4E9CD2BB172C3D0200E608AC /* IRAppDelegate.m in Sources */,
+				4E9CD2C4172C3D3500E608AC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4E9CD2BD172C3D1500E608AC /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E9CD2BE172C3D1500E608AC /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		4E9CD2C7172C3D4100E608AC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E9CD2C8172C3D4100E608AC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4E9F95DC175A609C000BC17F /* Credits.rtfd */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E9F95DD175A609C000BC17F /* en */,
+			);
+			name = Credits.rtfd;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4E1857711729D18200B666D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4E1857721729D18200B666D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4E1857741729D18200B666D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iris/iris-Prefix.pch";
+				INFOPLIST_FILE = "iris/iris-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = iris;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4E1857751729D18200B666D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iris/iris-Prefix.pch";
+				INFOPLIST_FILE = "iris/iris-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = iris;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E18573D1729D18100B666D5 /* Build configuration list for PBXProject "iris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E1857711729D18200B666D5 /* Debug */,
+				4E1857721729D18200B666D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E1857731729D18200B666D5 /* Build configuration list for PBXNativeTarget "iris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E1857741729D18200B666D5 /* Debug */,
+				4E1857751729D18200B666D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4E18573A1729D18100B666D5 /* Project object */;
+}

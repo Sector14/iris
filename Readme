@@ -1,0 +1,148 @@
+About Iris
+==========
+
+  Iris works in conjunction with a smart remote such as the Logitech Harmony
+  One which can emulate several Apple IR remotes. The basic play/pause/skip/stop
+  functionality will control iTunes as normal, however, additional buttons such
+  as 0..5 will rate the currently playing track and the "info" button will speak the
+  current track rating.
+
+
+Usage
+=====
+
+  Once your remote has been correctly configured (see Remote Setup), simply start 
+  iTunes and the iris app. Anytime you want to rate a song, press 1 to 5 on your
+  remote or 0 to clear the rating.
+
+  To hear the rating for the currently playing song, press "info"
+
+  If you do not wish the hear a confirmation of each newly set rating spoken back to you,
+  uncheck the "Announce ratings" option in the status menu.
+
+
+Experimental Features
+=====================
+
+  Unrated Announcement
+  --------------------
+
+  Announcement that an unrated track has just started playing can be enabled in the 
+  status bar. The words "No rating" will be spoken any time a track that has either a 
+  track rating of 0 or a computed track rating based on the album rating plays.
+  
+  This feature relies on an undocumented iTunes notification. Any future iTunes update
+  may break this functionality.
+  
+
+  Delayed Ratings
+  ---------------
+
+  If you play tracks from a smart playlst that uses live updating, it's possible that
+  changing the rating of a track could cause its immediate removal from the playlist even
+  though the track still meets the playlists criteria.
+
+  By enabling the "delay rating" option, the app will remember the rating you've assigned
+  to the currently playing track and will apply it once a different track starts playing.
+
+  This feature relies on an undocumented iTunes notification. Any future iTunes update
+  may break this functionality.
+
+
+
+Remote Setup
+============
+
+  For a logitech remote like the harmoney one, add a new device using
+  "media center PC", plex, plex player with a suitable name e.g "Plex Mac Mini"
+
+  Create a new activity (note some steps may differ depending on whether you
+  use an AV Receiver or not):
+     No - manually add an activity to my setup
+     Listen to music
+     Listen to Digital Music
+     Leave Listen to digital music checked.
+     I use my Plex Mac Mini to play digital music
+     I use my AV Receiver to control the volume
+       VCR/DVR (or whatever input source mac is plugged into)
+     Yes these settings are correct.
+     Done
+
+  When using iTunes without this app running, you'll either need an activity
+  setup to use the default apple IR settings (see logitech DB for mac mini) or
+  use the dir right/left to skip and ok to play/pause.
+
+  Running iTunes then this app should now allow both control of iTunes in a normal
+  way as well as rating songs by pressing the buttons 0..5 on the remote.
+ 
+  You may need to unpair any existing remote to allow multiple remote IDs to be
+  used. However as of 10.8, even when a single remote is paired, any remote is able
+  to control iTunes (bug?)
+
+  You may also need to hit the OK button the first time the app runs before events
+  will be recognised.
+
+  This app is designed to work with the Harmoney One remote by Logitech using the
+  Plex/Plex Player device and default mappings. Although other configurations may 
+  work, they're unsupported. Feel free to experiment, but please don't complain if
+  anything breaks.
+
+  Please report any bugs or feature suggestions to gary@mups.co.uk
+
+  If you find this application useful, please consider making a monetary donation
+  via paypal using this link.
+ 
+    https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MCF3ZYDGJ64EG 
+
+  Alternatively click the "Donate" button on the application "About Iris" menu.
+
+Third Party Code
+================
+  
+  This app uses the HIDRemote class by IOSpirit (www.iospirit.com/developers/) under the
+  following license.
+
+    Copyright (c) 2007-2011 IOSPIRIT GmbH (http://www.iospirit.com/)
+    All rights reserved.
+    
+    Redistribution and use in source and binary forms, with or without modification,
+    are permitted provided that the following conditions are met:
+    
+    * Redistributions of source code must retain the above copyright notice, this list
+      of conditions and the following disclaimer.
+    
+    * Redistributions in binary form must reproduce the above copyright notice, this
+      list of conditions and the following disclaimer in the documentation and/or other
+      materials provided with the distribution.
+    
+    * Neither the name of IOSPIRIT GmbH nor the names of its contributors may be used to
+      endorse or promote products derived from this software without specific prior
+      written permission.
+    
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+    EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+    OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+    SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+    INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+    TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+    BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+    ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+    DAMAGE.
+  
+LICENSE
+=======
+  
+  This app is Copyright 2013 by Gary Preston. All Rights Reserved.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+  EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+  SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+  TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+  BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+  DAMAGE.
+
